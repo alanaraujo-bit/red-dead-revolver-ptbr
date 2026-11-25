@@ -1,0 +1,22 @@
+name: 🙋 Quero ajudar
+description: Texturas, dublagem, revisão ou código. Diga o que você curte fazer.
+labels: ["comunidade"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      multiple: true
+      options:
+        - Jogar e testar
+        - Revisar tradução
+        - Arte / texturas
+        - Dublagem
+        - Código / engenharia reversa
+    validations:
+      required: true
+  - type: textarea
+    id: detalhes
+    attributes:
+      label: Conta mais
+      description: "Ex.: quero dublar o Jack Swift, tenho microfone bom / sei Photoshop e topo refazer cartazes."

@@ -1,0 +1,25 @@
+name: ✍️ Sugestão de tradução
+description: Uma frase que pode ficar mais natural, mais fiel ou mais faroeste
+labels: ["tradução"]
+body:
+  - type: input
+    id: atual
+    attributes:
+      label: Texto atual (português)
+    validations:
+      required: true
+  - type: input
+    id: original
+    attributes:
+      label: Original em inglês (se souber)
+  - type: input
+    id: sugestao
+    attributes:
+      label: Sugestão
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por quê?
+      description: Contexto da cena, termo do glossário, tamanho da tela...

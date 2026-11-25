@@ -1,0 +1,10 @@
+{
+"_comment": "Strings do executável (SLUS_205.00, comprimido no disco). Endereço na RAM do EE: [inglês, português]. O português precisa caber no espaço original (até o próximo texto). Aplicado por patch PCSX2 (tools/elfpatch.py).",
+"_tables": [
+  {"_comment": "títulos flutuantes do menu (livro, cartaz, diário, opções): só a tabela de ponteiros os usa",
+   "pointers": "0x4f6ed4", "region": ["0x51721d", 36],
+   "strings": [["Story Mode", "História"], ["Showdown", "Confronto"], ["Journal", "Diário"], ["Options", "Opções"]]}
+],
+"0x5171b3": ["New Player", "Criar Novo"],
+"0x517218": ["End", "Fim"]
+}

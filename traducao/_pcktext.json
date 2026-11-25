@@ -1,0 +1,604 @@
+{
+ "_comment": "Texto estático compilado nos .pck (tools/pcktext.py). Chave: offset do bloco no .pck original. 'lines' = linhas explícitas (com 'limits' de largura); 'paragraphs' = [primeira linha, nº de linhas, texto] com quebra automática até 'max'. Não pode ter mais glifos do que cabe no bloco original.",
+ "logo01.pck": {
+  "0x1b6c0": {
+   "lines": [
+    "Red Dead Revolver usa salvamento automático. Inserir um",
+    "memory card (8MB) (para PlayStation®2) a partir deste ponto",
+    "pode sobrescrever dados. Ao ver este ícone:"
+   ],
+   "limits": [
+    11300,
+    11300,
+    8400
+   ]
+  },
+  "0x1b9d0": {
+   "lines": [
+    "não remova o memory card (8MB) (para",
+    "PlayStation®2) do MEMORY CARD",
+    "nem desligue ou reinicie o console."
+   ],
+   "limits": [
+    7900,
+    6230,
+    11300
+   ],
+   "_space": "linha 2 com espaços mais estreitos: o \"slot 1,\" é desenhado à parte numa posição fixa",
+   "space": [
+    null,
+    90,
+    null
+   ]
+  },
+  "0x1c0d0": {
+   "_comment": "o botão X é desenhado no vão de espaços: Aperte termina onde Press terminava e para começa onde to começava",
+   "lines": [
+    "Aperte      para seguir"
+   ],
+   "space": [
+    149
+   ],
+   "x": [
+    1330
+   ],
+   "limits": [
+    3900
+   ]
+  },
+  "0x1fc50": {
+   "max": 13450,
+   "align": "center",
+   "paragraphs": [
+    [
+     0,
+     6,
+     "Rockstar Games e o logo Rockstargames, Rockstar San Diego e o logo Rockstar San Diego são marcas registradas da Take-Two Interactive Software, Inc. Rockstar Games e Rockstar San Diego são subsidiárias da Take-Two Interactive Software, Inc. Red Dead Revolver e o logo Red Dead Revolver são marcas registradas da Take-Two Interactive Software, Inc. Copyright 2004. Todos os direitos reservados."
+    ],
+    [
+     6,
+     5,
+     "Nomes de produtos são marcas de seus donos, não da Rockstar Games, Inc., e aparecem apenas como entretenimento. Nenhum produto, pessoa ou estabelecimento que aparece ou é citado neste jogo endossou o jogo nem as ações nele descritas ou exibidas, nem tem qualquer ligação com a Rockstar Games, Inc."
+    ]
+   ]
+  }
+ },
+ "j01_01_mainmenu.pck": {
+  "0x4a200": {
+   "_comment": "título do diário: a fonte própria só tem as letras do inglês, então usa a fonte de UI (token 0x000b) em escala 480/400",
+   "font": [
+    11,
+    480
+   ],
+   "scale": 1.2,
+   "align": "center",
+   "lines": [
+    "DIÁRIO DO",
+    "XERIFE",
+    "BARTLETT"
+   ]
+  }
+ },
+ "popups_01.pck": {
+  "0xd4c0": {
+   "auto": true,
+   "lines": [
+    "Espaço livre insuficiente no memory card (8MB) (para ",
+    "PlayStation®2) no MEMORY CARD            .  O Red Dead ",
+    "Revolver requer pelo menos           KB livres para ",
+    "salvar os dados do jogo. Deseja continuar sem salvar?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0xd9f0": {
+   "auto": true,
+   "lines": [
+    "Há um jogo salvo de Red Dead Revolver no ",
+    "memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD            , mas os dados estão danificados ou ",
+    "corrompidos. Tentar de novo?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x17580": {
+   "auto": true,
+   "lines": [
+    "Falha na formatação.",
+    "Veja se o ",
+    "memory card (8MB) (para PlayStation®2) ",
+    "está bem inserido no ",
+    "MEMORY CARD",
+    "          .  ",
+    "Aperte       para continuar"
+   ]
+  },
+  "0x178c0": {
+   "auto": true,
+   "lines": [
+    "Formatação OK.",
+    "Aperte       para continuar"
+   ]
+  },
+  "0x1d190": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no MEMORY CARD ",
+    " ",
+    "está sendo formatado. ",
+    "Não remova o memory card (8MB) (para PlayStation®2)",
+    "nem reinicie/desligue o console."
+   ]
+  },
+  "0x1d510": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no MEMORY CARD",
+    " ",
+    "não está formatado. ",
+    "Deseja formatá-lo?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x1d830": {
+   "auto": true,
+   "lines": [
+    "Memory card (8MB) (para PlayStation®2) não detectado.",
+    "Insira um memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD",
+    "Aperte       para continuar sem salvar"
+   ]
+  },
+  "0x1db20": {
+   "auto": true,
+   "lines": [
+    "ou"
+   ]
+  },
+  "0x1dbf0": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no",
+    "foi trocado. Continuar pode sobrescrever o jogo salvo. ",
+    "Deseja continuar salvando?",
+    "Sim",
+    "Não ",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x1dfa0": {
+   "auto": true,
+   "lines": [
+    "Tem certeza?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x1e150": {
+   "auto": true,
+   "lines": [
+    "Erro ao salvar! Veja o memory card (8MB) (para PlayStation®2) ",
+    "no MEMORY CARD            .  Repetir?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x1e450": {
+   "auto": true,
+   "lines": [
+    "Nenhum jogo salvo. Deseja salvar no memory card ",
+    "(8MB) (para PlayStation®2) no MEMORY CARD ",
+    "            ?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x1e7a0": {
+   "auto": true,
+   "lines": [
+    "Espaço livre insuficiente no memory card (8MB) (para ",
+    "PlayStation®2) no MEMORY CARD",
+    "       .  O Red Dead Revolver requer pelo menos ",
+    "     KB livres para salvar o jogo. ",
+    "Use um memory card (8MB) (para PlayStation®2) com ",
+    "espaço suficiente, ou",
+    "Aperte        para continuar sem salvar"
+   ]
+  }
+ },
+ "popups_01_ingame.pck": {
+  "0x15a80": {
+   "auto": true,
+   "lines": [
+    "Espaço livre insuficiente no memory card (8MB) ",
+    "(para PlayStation®2) no MEMORY CARD ",
+    "           .  O Red Dead Revolver requer pelo menos           ",
+    "KB livres para ",
+    "salvar os dados do jogo. Deseja continuar ",
+    "sem salvar?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x15fd0": {
+   "auto": true,
+   "lines": [
+    "Há um jogo salvo de Red Dead Revolver ",
+    "no memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD            , mas os dados estão ",
+    "danificados ou corrompidos. Tentar de novo?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x1fb80": {
+   "auto": true,
+   "lines": [
+    "Falha na formatação.",
+    "Veja se o ",
+    "memory card (8MB) (para PlayStation®2) ",
+    "está bem inserido no ",
+    "MEMORY CARD",
+    "          .  ",
+    "Aperte       para continuar"
+   ]
+  },
+  "0x1fec0": {
+   "auto": true,
+   "lines": [
+    "Formatação OK.",
+    "Aperte       para continuar"
+   ]
+  },
+  "0x25790": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD ",
+    " ",
+    "está sendo formatado. ",
+    "Não remova o memory card (8MB) (para ",
+    "PlayStation®2)",
+    "nem reinicie/desligue o console."
+   ]
+  },
+  "0x25b20": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD",
+    " ",
+    "não está formatado. ",
+    "Deseja formatá-lo?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x25e50": {
+   "auto": true,
+   "lines": [
+    "Memory card (8MB) (para PlayStation®2) não ",
+    "detectado.",
+    "Insira um memory card (8MB) (para ",
+    "PlayStation®2) no MEMORY CARD",
+    "Aperte       para continuar sem salvar."
+   ]
+  },
+  "0x26150": {
+   "auto": true,
+   "lines": [
+    "ou"
+   ]
+  },
+  "0x26220": {
+   "auto": true,
+   "lines": [
+    "O memory card (8MB) (para PlayStation®2) no",
+    "foi trocado. Continuar pode sobrescrever ",
+    "o jogo salvo. Deseja continuar salvando?",
+    "Sim",
+    "Não ",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x265d0": {
+   "auto": true,
+   "lines": [
+    "Tem certeza?",
+    "Sim",
+    "Não",
+    "Aperte       para confirmar"
+   ]
+  },
+  "0x26780": {
+   "auto": true,
+   "lines": [
+    "Erro ao salvar! Veja o memory card (8MB) (para ",
+    "PlayStation®2) no MEMORY CARD            .  ",
+    "Repetir?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x26a90": {
+   "auto": true,
+   "lines": [
+    "Nenhum jogo salvo. Deseja salvar no ",
+    "memory card (8MB) (para PlayStation®2) no ",
+    "MEMORY CARD ",
+    "            ?",
+    "Sim",
+    "Não",
+    "Aperte        para confirmar"
+   ]
+  },
+  "0x26de0": {
+   "auto": true,
+   "lines": [
+    "Espaço livre insuficiente no memory card (8MB)",
+    " (para PlayStation®2) no MEMORY CARD",
+    "       .  O Red Dead Revolver ",
+    "requer pelo menos ",
+    "     KB",
+    "livres para salvar os dados do jogo. ",
+    "Aperte        para continuar"
+   ]
+  }
+ },
+ "startchpmenu.pck": {},
+ "rewardweapon8.pck": {
+  "0x2440": {
+   "auto": true,
+   "lines": [
+    "Aguarde"
+   ],
+   "font": [
+    149,
+    800
+   ]
+  },
+  "0x2500": {
+   "auto": true,
+   "lines": [
+    "Seleção de Armas"
+   ],
+   "font": [
+    149,
+    800
+   ]
+  },
+  "0x25e0": {
+   "auto": true,
+   "lines": [
+    "Salvar Jogo?"
+   ],
+   "font": [
+    149,
+    800
+   ]
+  },
+  "0xe5800": {
+   "auto": true,
+   "text": "As últimas notícias de Brimstone dizem que Red voltou sedento de vingança. Acabou a boa vontade: ele pretende fazer uma limpeza nesta e nas regiões vizinhas. Vários bandidos estão fugindo desse suposto justiceiro, mas ele já conseguiu rastrear e eliminar alguns. Veja os arruaceiros recém-capturados/falecidos."
+  },
+  "0xe5e50": {
+   "auto": true,
+   "text": "Chegaram mais notícias do sucesso de Red em defender a população local de possíveis agressores. Eis parte das recompensas que ele recolheu. Em breve haverá mais desta história. Enquanto isso, fiquem em casa até o tiroteio acabar."
+  },
+  "0xe62d0": {
+   "auto": true,
+   "text": "O Battle Royale vai começar em breve. Muitos competidores de todo o território vieram participar. Diversão garantida para todos."
+  },
+  "0xf74d0": {
+   "auto": true,
+   "lines": [
+    "Sair"
+   ]
+  },
+  "0x18d940": {
+   "auto": true,
+   "lines": [
+    "Sem chefe ",
+    "vencido"
+   ]
+  },
+  "0x18e460": {
+   "auto": true,
+   "lines": [
+    "Prêmio"
+   ]
+  },
+  "0x19bb00": {
+   "auto": true,
+   "lines": [
+    "Precisão",
+    "Dano Sofrido",
+    "Tempo",
+    "Maior Combo"
+   ]
+  },
+  "0x19f0c0": {
+   "auto": true,
+   "lines": [
+    "Recompensa Obtida"
+   ]
+  },
+  "0x19f150": {
+   "auto": true,
+   "lines": [
+    "Saldo"
+   ]
+  },
+  "0x1a4980": {
+   "auto": true,
+   "lines": [
+    "Total Gasto"
+   ]
+  },
+  "0x1a8130": {
+   "auto": true,
+   "lines": [
+    "Itens Liberados"
+   ]
+  },
+  "0x1b9c10": {
+   "auto": true,
+   "lines": [
+    "O progresso atual ",
+    "será perdido. Tem certeza ",
+    "de que deseja continuar?"
+   ]
+  },
+  "0x1ba390": {
+   "auto": true,
+   "lines": [
+    "Tem certeza?"
+   ]
+  }
+ },
+ "j02_01_heros.pck": {
+  "_images": {
+   "0x49a60": "work/tex/lote3/gemini/01_lendas.png",
+   "0xb0a20": "work/tex/lote3/gemini/02_concurso_saque.png",
+   "0x8dca0": "work/tex/lote3/gemini/05_cartaz_preston.png"
+  }
+ },
+ "j02_02_heros.pck": {},
+ "j03_01_sidearms.pck": {
+  "_images": {
+   "0x73460": "work/tex/lote3/gemini/04_jornal_armas.png"
+  }
+ },
+ "j03_02_sidearms.pck": {},
+ "j04_01_ranged.pck": {},
+ "j04_02_ranged.pck": {},
+ "j04_03_ranged.pck": {},
+ "j05_01_thrown.pck": {},
+ "j06_01_ugly.pck": {
+  "_images": {
+   "0xa4be0": "work/tex/lote3/gemini/03_rotulo_uisque.png"
+  }
+ },
+ "j07_01_perry.pck": {},
+ "j08_01_outlaws.pck": {},
+ "j08_02_outlaws.pck": {},
+ "j08_03_outlaws.pck": {},
+ "j09_01_wanted.pck": {},
+ "j09_02_wanted.pck": {},
+ "j11_01_army.pck": {},
+ "j12_01_memories.pck": {},
+ "j13_01_citizens.pck": {},
+ "j13_02_citizens.pck": {},
+ "j14_01_good.pck": {},
+ "j14_02_good.pck": {},
+ "j15_01_entrants.pck": {},
+ "j16_01_merchants.pck": {},
+ "j17_01_protectors.pck": {},
+ "j18_01_places.pck": {},
+ "j18_02_places.pck": {},
+ "j18_03_places.pck": {},
+ "j18_04_places.pck": {},
+ "j19_01_battles.pck": {
+  "0x73f40": {
+   "auto": true,
+   "lines": [
+    "Grandes",
+    "Batalhas"
+   ]
+  },
+  "0x82fd0": {
+   "auto": true,
+   "lines": [
+    "Sair"
+   ]
+  },
+  "0x83a50": {
+   "auto": true,
+   "lines": [
+    "Índice"
+   ]
+  },
+  "0xa9bf0": {
+   "auto": true,
+   "lines": [
+    "História"
+   ]
+  },
+  "0xa9c70": {
+   "auto": true,
+   "lines": [
+    "Maior Combo",
+    "Saldo",
+    "Distância Percorrida",
+    "Distância a Cavalo",
+    "Precisão dos Tiros (%)",
+    "Inimigos Mortos",
+    "Tentativas"
+   ]
+  },
+  "0xa9f60": {
+   "auto": true,
+   "lines": [
+    "Confronto"
+   ]
+  },
+  "0xa9fe0": {
+   "auto": true,
+   "lines": [
+    "Personagem Mais Usado",
+    "Arma Favorita",
+    "Inimigo Mais Odiado",
+    "Jogador Mais Odiado",
+    "Cartas Coletadas",
+    "Vezes que Morreu",
+    "Recompensas Coletadas"
+   ]
+  },
+  "0xaa2d0": {
+   "auto": true,
+   "lines": [
+    "Tempo Congelado",
+    "Maior Série de Mortes"
+   ]
+  },
+  "0xc3020": {
+   "auto": true,
+   "lines": [
+    "Outros Dados"
+   ]
+  },
+  "0xc30b0": {
+   "auto": true,
+   "lines": [
+    "Diário Concluído (%)",
+    "Segredos Achados / Liberados",
+    "Total Gasto",
+    "Distância Total Percorrida",
+    "Dinheiro Coletado",
+    "Total de Tiros Certeiros",
+    "Total de Tiros Disparados"
+   ]
+  },
+  "0xc33b0": {
+   "auto": true,
+   "lines": [
+    "Tiros na Cabeça",
+    "Golpes Especiais Usados",
+    "Modo História Concluído",
+    "Tempo de Jogo"
+   ]
+  }
+ }
+}

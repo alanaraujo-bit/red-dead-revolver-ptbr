@@ -1,0 +1,15 @@
+# Arquivos do jogo e tudo que é gerado a partir dele: nunca versionar
+work/
+*.iso
+*.ISO
+*.bin
+*.p2s
+*.DAT
+*.partial
+
+# Python
+__pycache__/
+*.pyc
+
+# Notas locais
+PROMPT_CONTINUAR.md

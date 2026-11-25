@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estúdio de Dublagem</title>
+<style>
+  :root { --bg:#16130f; --panel:#221d17; --line:#3a3127; --ink:#efe6d8; --dim:#a8998a; --accent:#d9a441;
+          --ok:#6fbf73; --warn:#e0b03c; --bad:#e0604f; --rec:#e0453a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.4 system-ui, "Segoe UI", sans-serif; height:100vh; display:flex; }
+  aside { width:300px; background:var(--panel); border-right:1px solid var(--line); overflow:auto; padding:12px; }
+  aside h1 { font-size:15px; margin:4px 0 2px; color:var(--accent); }
+  aside .who { font-size:13px; color:var(--dim); margin-bottom:10px; }
+  .item { padding:8px 10px; border-radius:6px; cursor:pointer; margin-bottom:4px; border:1px solid transparent; }
+  .item:hover { background:#2b241c; }
+  .item.sel { border-color:var(--accent); background:#2e261c; }
+  .item .s { font-size:12px; color:var(--dim); display:flex; justify-content:space-between; }
+  .item .t { font-size:14px; }
+  .done { color:var(--ok); }
+  main { flex:1; display:flex; flex-direction:column; padding:20px 28px; gap:16px; min-width:0; }
+  .top { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  button { background:#2f271e; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:9px 14px; font-size:15px; cursor:pointer; }
+  button:hover { border-color:var(--accent); }
+  button:disabled { opacity:.4; cursor:default; }
+  button.rec { background:var(--rec); border-color:var(--rec); color:#fff; font-weight:600; }
+  kbd { font-size:11px; color:var(--dim); border:1px solid var(--line); border-radius:3px; padding:0 4px; margin-left:4px; }
+  .en { color:var(--dim); font-size:18px; }
+  .stage { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:22px;
+           background:#100d0a; border:1px solid var(--line); border-radius:10px; padding:24px; position:relative; }
+  .count { font-size:110px; font-weight:700; color:var(--accent); height:130px; }
+  .script { font-size:48px; font-weight:600; text-align:center; max-width:95%; }
+  .script span.on { color:var(--accent); }
+  .script textarea { width:100%; font:inherit; color:var(--ink); background:transparent; border:1px dashed var(--line); text-align:center; resize:none; }
+  .bar { width:90%; height:18px; background:#2a231b; border-radius:9px; overflow:hidden; position:relative; }
+  .fill { height:100%; width:0; background:var(--ok); }
+  .bar .lim { position:absolute; top:0; bottom:0; width:2px; background:#fff; }
+  .meter { width:90%; height:6px; background:#2a231b; border-radius:3px; overflow:hidden; }
+  .meter div { height:100%; width:0; background:var(--accent); }
+  .info { display:flex; gap:20px; color:var(--dim); font-size:15px; flex-wrap:wrap; }
+  .info b { color:var(--ink); }
+  .ok { color:var(--ok)!important; } .warn { color:var(--warn)!important; } .bad { color:var(--bad)!important; }
+  label { color:var(--dim); font-size:14px; display:flex; gap:6px; align-items:center; }
+  #msg { color:var(--dim); font-size:14px; min-height:20px; }
+</style>
+</head>
+<body>
+<aside>
+  <h1 id="titulo">Estúdio de Dublagem</h1>
+  <div class="who" id="who"></div>
+  <div id="list"></div>
+</aside>
+<main>
+  <div class="top">
+    <button id="bDir">Escolher pasta de gravação</button>
+    <label><input type="checkbox" id="cGuide"> tocar o original junto (guia, use fone)</label>
+    <label><input type="checkbox" id="cAuto" checked> salvar ao terminar</label>
+    <span id="dirName" class="info"></span>
+  </div>
+  <div class="en" id="en"></div>
+  <div class="stage">
+    <div class="count" id="count"></div>
+    <div class="script" id="script"></div>
+    <div class="bar"><div class="fill" id="fill"></div><div class="lim" id="lim"></div></div>
+    <div class="meter"><div id="meter"></div></div>
+  </div>
+  <div class="top">
+    <button id="bOrig">Ouvir original<kbd>O</kbd></button>
+    <button id="bRec" class="rec">Gravar<kbd>R</kbd></button>
+    <button id="bStop" disabled>Parar<kbd>Espaço</kbd></button>
+    <button id="bPlay" disabled>Ouvir take<kbd>P</kbd></button>
+    <button id="bSave" disabled>Salvar<kbd>S</kbd></button>
+    <button id="bEdit">Editar texto<kbd>E</kbd></button>
+  </div>
+  <div class="info">
+    <span>Tempo máximo: <b id="max"></b></span>
+    <span>Take: <b id="dur">—</b></span>
+    <span id="fit"></span>
+  </div>
+  <div id="msg"></div>
+</main>
+<script>
+const params = new URLSearchParams(location.search);
+const ROTEIRO = params.get('roteiro') || 'cap01_nate.json';
+const AUDIO = '../work/audio/';
+const KEY = 'estudio:' + ROTEIRO;
+let data, cur = 0, dir = null, stream = null, rec = null, chunks = [], take = null, takeDur = 0, busy = false;
+let actx = null, analyser = null, raf = 0, guide = null;
+const $ = id => document.getElementById(id);
+const saved = (() => { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } })();
+const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch {} };
+const msg = t => $('msg').textContent = t;
+
+async function load() {
+  data = await fetch(ROTEIRO).then(r => r.json());
+  for (const f of data.falas) if (saved['pt:' + f.stream]) f.pt = saved['pt:' + f.stream];
+  $('titulo').textContent = data.titulo;
+  $('who').textContent = data.personagem;
+  renderList(); select(0);
+}
+function renderList() {
+  $('list').innerHTML = data.falas.map((f, i) =>
+    `<div class="item ${i === cur ? 'sel' : ''}" data-i="${i}">
+       <div class="s"><span>${f.stream}</span><span class="${saved[f.stream] ? 'done' : ''}">${saved[f.stream] ? 'gravada ✓' : f.max.toFixed(2) + ' s'}</span></div>
+       <div class="t">${f.pt}</div></div>`).join('');
+  for (const el of document.querySelectorAll('.item')) el.onclick = () => !busy && select(+el.dataset.i);
+}
+function words(f) { return f.pt.split(/(\s+)/); }
+function showScript(f, upto = -1) {
+  let n = 0;
+  $('script').innerHTML = words(f).map(w => /\S/.test(w) ? `<span class="${n++ < upto ? 'on' : ''}">${w}</span>` : w).join('');
+}
+function select(i) {
+  cur = i; take = null; takeDur = 0;
+  const f = data.falas[i];
+  $('en').textContent = '“' + f.en + '”';
+  $('max').textContent = f.max.toFixed(2) + ' s';
+  $('dur').textContent = '—'; $('fit').textContent = ''; $('count').textContent = '';
+  $('fill').style.width = '0'; $('fill').style.background = 'var(--ok)';
+  $('lim').style.left = (100 / 1.25) + '%';   // bar spans 125% of the slot; the white line is the limit
+  $('bPlay').disabled = $('bSave').disabled = true;
+  showScript(f); renderList();
+}
+async function ensureMic() {
+  if (stream) return;
+  stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+  actx = new AudioContext();
+  analyser = actx.createAnalyser(); analyser.fftSize = 1024;
+  actx.createMediaStreamSource(stream).connect(analyser);
+}
+function beep(freq, ms) {
+  const o = actx.createOscillator(), g = actx.createGain();
+  o.frequency.value = freq; g.gain.value = 0.15; o.connect(g).connect(actx.destination);
+  o.start(); o.stop(actx.currentTime + ms / 1000);
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function meterLoop() {
+  const buf = new Float32Array(analyser.fftSize);
+  const tick = () => {
+    analyser.getFloatTimeDomainData(buf);
+    let peak = 0; for (const v of buf) peak = Math.max(peak, Math.abs(v));
+    $('meter').style.width = Math.min(100, peak * 110) + '%';
+    $('meter').style.background = peak > 0.97 ? 'var(--bad)' : 'var(--accent)';
+    raf = requestAnimationFrame(tick);
+  };
+  tick();
+}
+async function record() {
+  if (busy) return;
+  try { await ensureMic(); } catch (e) { msg('Microfone bloqueado ou ausente: ' + e.message); return; }
+  if (actx.state === 'suspended') await actx.resume();
+  busy = true; take = null;
+  const f = data.falas[cur];
+  $('bRec').disabled = true; $('bPlay').disabled = $('bSave').disabled = true;
+  showScript(f); $('fill').style.width = '0';
+  meterLoop();
+  for (const n of [3, 2, 1]) { $('count').textContent = n; beep(n === 1 ? 1320 : 880, 120); await sleep(800); }
+  $('count').textContent = '●'; $('count').style.color = 'var(--rec)';
+  chunks = [];
+  rec = new MediaRecorder(stream);
+  rec.ondataavailable = e => chunks.push(e.data);
+  const stopped = new Promise(r => rec.onstop = r);
+  rec.start();
+  if ($('cGuide').checked) { guide = new Audio(AUDIO + f.stream + '.wav'); guide.play(); }
+  $('bStop').disabled = false;
+  const t0 = performance.now(), total = f.max * 1.25 * 1000, nw = words(f).filter(w => /\S/.test(w)).length;
+  const anim = () => {
+    if (rec.state !== 'recording') return;
+    const t = performance.now() - t0;
+    $('fill').style.width = Math.min(100, t / total * 100) + '%';
+    $('fill').style.background = t > f.max * 1000 ? 'var(--bad)' : 'var(--ok)';
+    showScript(f, Math.ceil(Math.min(1, t / (f.max * 1000)) * nw));   // pace guide: words light up over the slot
+    if (t >= total + 300) stop(); else requestAnimationFrame(anim);
+  };
+  anim();
+  await stopped;
+  cancelAnimationFrame(raf); $('meter').style.width = '0';
+  if (guide) { guide.pause(); guide = null; }
+  $('count').textContent = ''; $('count').style.color = '';
+  $('bStop').disabled = true; $('bRec').disabled = false;
+  take = new Blob(chunks, { type: rec.mimeType });
+  try { takeDur = (await actx.decodeAudioData(await take.arrayBuffer())).duration; } catch { takeDur = 0; }
+  showTake(f);
+  busy = false;
+  if ($('cAuto').checked) save();
+}
+function stop() { if (rec && rec.state === 'recording') rec.stop(); }
+function showTake(f) {
+  $('dur').textContent = takeDur ? takeDur.toFixed(2) + ' s' : '?';
+  const r = takeDur / f.max, el = $('fit');
+  // stma.py prep trims leading/trailing silence, then speeds up to 1.4x if needed
+  el.className = r <= 1.05 ? 'ok' : r <= 1.35 ? 'warn' : 'bad';
+  el.textContent = r <= 1.05 ? 'cabe' : r <= 1.35 ? 'vai acelerar um pouco (ok se houver silêncio nas pontas)' : 'longo demais: fale mais rápido ou encurte o texto';
+  $('bPlay').disabled = $('bSave').disabled = false;
+}
+function play() { if (take) new Audio(URL.createObjectURL(take)).play(); }
+function orig() { new Audio(AUDIO + data.falas[cur].stream + '.wav').play(); }
+async function pickDir() {
+  if (!window.showDirectoryPicker) { msg('Este navegador não deixa escolher pasta; os takes serão baixados (use o Chrome).'); return; }
+  try { dir = await showDirectoryPicker({ id: 'dub-raw', mode: 'readwrite' }); $('dirName').textContent = 'Pasta: ' + dir.name; msg('Escolha a pasta work\\dub\\raw do projeto.'); }
+  catch {}
+}
+async function save() {
+  if (!take) return;
+  const f = data.falas[cur];
+  const ext = take.type.includes('ogg') ? 'ogg' : take.type.includes('mp4') ? 'm4a' : 'webm';
+  const name = f.stream + '.' + ext;
+  try {
+    if (dir) {
+      const h = await dir.getFileHandle(name, { create: true });
+      const w = await h.createWritable(); await w.write(take); await w.close();
+      msg('Salvo: ' + dir.name + '\\' + name);
+    } else {
+      const a = document.createElement('a'); a.href = URL.createObjectURL(take); a.download = name; a.click();
+      msg('Baixado: ' + name + ' (mova para work\\dub\\raw)');
+    }
+    saved[f.stream] = 1; persist(); renderList();
+  } catch (e) { msg('Não salvou: ' + e.message); }
+}
+function edit() {
+  const f = data.falas[cur];
+  if ($('script').querySelector('textarea')) {
+    f.pt = $('script').querySelector('textarea').value.trim();
+    saved['pt:' + f.stream] = f.pt; persist(); showScript(f); renderList();
+    msg('Texto alterado só nesta página. Para mudar de vez, edite o .json do roteiro (PR).');
+  } else {
+    $('script').innerHTML = '<textarea rows="2"></textarea>';
+    $('script').querySelector('textarea').value = f.pt;
+    $('script').querySelector('textarea').focus();
+  }
+}
+$('bRec').onclick = record; $('bStop').onclick = stop; $('bPlay').onclick = play; $('bSave').onclick = save;
+$('bOrig').onclick = orig; $('bDir').onclick = pickDir; $('bEdit').onclick = edit;
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); edit(); } return; }
+  const k = e.key.toLowerCase();
+  if (k === 'r') record(); else if (k === ' ') { e.preventDefault(); stop(); }
+  else if (k === 'p') play(); else if (k === 's') save(); else if (k === 'o') orig(); else if (k === 'e') { e.preventDefault(); edit(); }
+  else if (k === 'arrowdown' && !busy) select(Math.min(data.falas.length - 1, cur + 1));
+  else if (k === 'arrowup' && !busy) select(Math.max(0, cur - 1));
+});
+load().catch(e => msg('Não carregou o roteiro: ' + e.message));
+</script>
+</body>
+</html>

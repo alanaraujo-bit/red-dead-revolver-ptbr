@@ -1,0 +1,41 @@
+name: 🐞 Problema no jogo
+description: Texto em inglês, texto cortado, letra faltando, travamento...
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Texto ainda em inglês
+        - Texto cortado ou sobreposto
+        - Letra/acento faltando ou estranho
+        - Erro de tradução
+        - Travamento ou falha
+        - Outro
+    validations:
+      required: true
+  - type: input
+    id: onde
+    attributes:
+      label: Onde aparece
+      placeholder: "Ex.: Capítulo 3, tela de recompensa / Diário, página do Jack Swift"
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu
+      description: Copie o texto como aparece, se puder.
+    validations:
+      required: true
+  - type: textarea
+    id: print
+    attributes:
+      label: Print
+      description: Arraste a imagem aqui (no PCSX2, F8 tira print).
+  - type: input
+    id: versao
+    attributes:
+      label: Versão / emulador
+      placeholder: "Ex.: commit abc123, PCSX2 2.8"

@@ -1,0 +1,15 @@
+{
+ "titulo": "Capítulo 1 — Na Mosca: Nate Harlow (ataque ao rancho)",
+ "personagem": "Nate Harlow — pai do Red, desesperado, gritando por cima de tiros",
+ "falas": [
+  {"stream": "nate_bullseye_01", "en": "Red! Run up the hill, boy! We're gettin' raided!", "pt": "Red! Sobe o morro, garoto! É um ataque!", "max": 2.99},
+  {"stream": "nate_bullseye_02", "en": "Don't let me down, son!", "pt": "Não me decepciona, filho!", "max": 1.83},
+  {"stream": "nate_bullseye_03", "en": "I need ya now, son!", "pt": "Preciso de você agora, filho!", "max": 1.75},
+  {"stream": "nate_bullseye_04", "en": "Come on, Red, it's now or never!", "pt": "Vamos, Red, é agora ou nunca!", "max": 2.22},
+  {"stream": "nate_bullseye_05", "en": "Check round back, Red!", "pt": "Olha lá atrás, Red!", "max": 1.24},
+  {"stream": "nate_bullseye_06", "en": "Red! Come help, quick!", "pt": "Red! Vem ajudar, rápido!", "max": 2.13},
+  {"stream": "nate_bullseye_07", "en": "Falling Star! No!", "pt": "Falling Star! Não!", "max": 2.01},
+  {"stream": "nate_bullseye_08", "en": "What do you want?", "pt": "O que vocês querem?", "max": 0.98},
+  {"stream": "nate_bullseye_09", "en": "If it's gold you're after, there ain't none here!", "pt": "Se é ouro que vocês querem, aqui não tem!", "max": 2.94}
+ ]
+}

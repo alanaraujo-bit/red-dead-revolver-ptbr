@@ -1,0 +1,20 @@
+[Traducao PT-BR (textos do executavel)]
+author=RDR-PTBR
+description=Textos do executavel traduzidos (New Player, End...)
+patch=1,EE,004F6ED8,word,00517226
+patch=1,EE,004F6EDC,word,00517230
+patch=1,EE,004F6EE0,word,00517237
+patch=1,EE,005171B0,word,43004F4E
+patch=1,EE,005171B4,word,72616972
+patch=1,EE,005171B8,word,766F4E20
+patch=1,EE,005171BC,word,7270006F
+patch=1,EE,00517218,word,006D6946
+patch=1,EE,0051721C,word,73694800
+patch=1,EE,00517220,word,6972F374
+patch=1,EE,00517224,word,6F430061
+patch=1,EE,00517228,word,6F72666E
+patch=1,EE,0051722C,word,006F746E
+patch=1,EE,00517230,word,72E16944
+patch=1,EE,00517234,word,4F006F69
+patch=1,EE,00517238,word,65F5E770
+patch=1,EE,0051723C,word,00000073

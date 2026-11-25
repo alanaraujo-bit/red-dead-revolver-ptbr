@@ -1,0 +1,465 @@
+{
+ "_comment": "Texto estático dos .pck vistos no capítulo 1 + menu. {pck: {bloco: texto (quebra automática) ou [linhas]}}. Gerado para _pcktext.json por tools/pcktextgen.py.",
+ "popups_01.pck": {
+  "0xd4c0": [
+   "Espaço livre insuficiente no memory card (8MB) (para ",
+   "PlayStation®2) no MEMORY CARD            .  O Red Dead ",
+   "Revolver requer pelo menos           KB livres para ",
+   "salvar os dados do jogo. Deseja continuar sem salvar?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0xd9f0": [
+   "Há um jogo salvo de Red Dead Revolver no ",
+   "memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD            , mas os dados estão danificados ou ",
+   "corrompidos. Tentar de novo?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0x17580": [
+   "Falha na formatação.",
+   "Veja se o ",
+   "memory card (8MB) (para PlayStation®2) ",
+   "está bem inserido no ",
+   "MEMORY CARD",
+   "          .  ",
+   "Aperte       para continuar"
+  ],
+  "0x178c0": [
+   "Formatação OK.",
+   "Aperte       para continuar"
+  ],
+  "0x1d190": [
+   "O memory card (8MB) (para PlayStation®2) no MEMORY CARD ",
+   " ",
+   "está sendo formatado. ",
+   "Não remova o memory card (8MB) (para PlayStation®2)",
+   "nem reinicie/desligue o console."
+  ],
+  "0x1d510": [
+   "O memory card (8MB) (para PlayStation®2) no MEMORY CARD",
+   " ",
+   "não está formatado. ",
+   "Deseja formatá-lo?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x1d830": [
+   "Memory card (8MB) (para PlayStation®2) não detectado.",
+   "Insira um memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD",
+   "Aperte       para continuar sem salvar"
+  ],
+  "0x1db20": [
+   "ou"
+  ],
+  "0x1dbf0": [
+   "O memory card (8MB) (para PlayStation®2) no",
+   "foi trocado. Continuar pode sobrescrever o jogo salvo. ",
+   "Deseja continuar salvando?",
+   "Sim",
+   "Não ",
+   "Aperte       para confirmar"
+  ],
+  "0x1dfa0": [
+   "Tem certeza?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0x1e150": [
+   "Erro ao salvar! Veja o memory card (8MB) (para PlayStation®2) ",
+   "no MEMORY CARD            .  Repetir?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x1e450": [
+   "Nenhum jogo salvo. Deseja salvar no memory card ",
+   "(8MB) (para PlayStation®2) no MEMORY CARD ",
+   "            ?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x1e7a0": [
+   "Espaço livre insuficiente no memory card (8MB) (para ",
+   "PlayStation®2) no MEMORY CARD",
+   "       .  O Red Dead Revolver requer pelo menos ",
+   "     KB livres para salvar o jogo. ",
+   "Use um memory card (8MB) (para PlayStation®2) com ",
+   "espaço suficiente, ou",
+   "Aperte        para continuar sem salvar"
+  ]
+ },
+ "popups_01_ingame.pck": {
+  "0x15a80": [
+   "Espaço livre insuficiente no memory card (8MB) ",
+   "(para PlayStation®2) no MEMORY CARD ",
+   "           .  O Red Dead Revolver requer pelo menos           ",
+   "KB livres para ",
+   "salvar os dados do jogo. Deseja continuar ",
+   "sem salvar?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0x15fd0": [
+   "Há um jogo salvo de Red Dead Revolver ",
+   "no memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD            , mas os dados estão ",
+   "danificados ou corrompidos. Tentar de novo?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0x1fb80": [
+   "Falha na formatação.",
+   "Veja se o ",
+   "memory card (8MB) (para PlayStation®2) ",
+   "está bem inserido no ",
+   "MEMORY CARD",
+   "          .  ",
+   "Aperte       para continuar"
+  ],
+  "0x1fec0": [
+   "Formatação OK.",
+   "Aperte       para continuar"
+  ],
+  "0x25790": [
+   "O memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD ",
+   " ",
+   "está sendo formatado. ",
+   "Não remova o memory card (8MB) (para ",
+   "PlayStation®2)",
+   "nem reinicie/desligue o console."
+  ],
+  "0x25b20": [
+   "O memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD",
+   " ",
+   "não está formatado. ",
+   "Deseja formatá-lo?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x25e50": [
+   "Memory card (8MB) (para PlayStation®2) não ",
+   "detectado.",
+   "Insira um memory card (8MB) (para ",
+   "PlayStation®2) no MEMORY CARD",
+   "Aperte       para continuar sem salvar."
+  ],
+  "0x26150": [
+   "ou"
+  ],
+  "0x26220": [
+   "O memory card (8MB) (para PlayStation®2) no",
+   "foi trocado. Continuar pode sobrescrever ",
+   "o jogo salvo. Deseja continuar salvando?",
+   "Sim",
+   "Não ",
+   "Aperte       para confirmar"
+  ],
+  "0x265d0": [
+   "Tem certeza?",
+   "Sim",
+   "Não",
+   "Aperte       para confirmar"
+  ],
+  "0x26780": [
+   "Erro ao salvar! Veja o memory card (8MB) (para ",
+   "PlayStation®2) no MEMORY CARD            .  ",
+   "Repetir?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x26a90": [
+   "Nenhum jogo salvo. Deseja salvar no ",
+   "memory card (8MB) (para PlayStation®2) no ",
+   "MEMORY CARD ",
+   "            ?",
+   "Sim",
+   "Não",
+   "Aperte        para confirmar"
+  ],
+  "0x26de0": [
+   "Espaço livre insuficiente no memory card (8MB)",
+   " (para PlayStation®2) no MEMORY CARD",
+   "       .  O Red Dead Revolver ",
+   "requer pelo menos ",
+   "     KB",
+   "livres para salvar os dados do jogo. ",
+   "Aperte        para continuar"
+  ]
+ },
+ "startchpmenu.pck": {
+  "0x5280": [
+   "Loja"
+  ],
+  "0x5330": [
+   "Seleção de Armas"
+  ],
+  "0x5410": [
+   "Jogar"
+  ]
+ },
+ "rewardweapon8.pck": {
+  "0x2440": [
+   "Aguarde"
+  ],
+  "0x2500": [
+   "Seleção de Armas"
+  ],
+  "0x25e0": [
+   "Salvar Jogo?"
+  ],
+  "0xe5800": "As últimas notícias de Brimstone dizem que Red voltou sedento de vingança. Acabou a boa vontade: ele pretende fazer uma limpeza nesta e nas regiões vizinhas. Vários bandidos estão fugindo desse suposto justiceiro, mas ele já conseguiu rastrear e eliminar alguns. Veja os arruaceiros recém-capturados/falecidos.",
+  "0xe5e50": "Chegaram mais notícias do sucesso de Red em defender a população local de possíveis agressores. Eis parte das recompensas que ele recolheu. Em breve haverá mais desta história. Enquanto isso, fiquem em casa até o tiroteio acabar.",
+  "0xe62d0": "O Battle Royale vai começar em breve. Muitos competidores de todo o território vieram participar. Diversão garantida para todos.",
+  "0xf74d0": [
+   "Sair"
+  ],
+  "0x18d940": [
+   "Sem chefe ",
+   "vencido"
+  ],
+  "0x18e460": [
+   "Prêmio"
+  ],
+  "0x19bb00": [
+   "Precisão",
+   "Dano Sofrido",
+   "Tempo",
+   "Maior Combo"
+  ],
+  "0x19f0c0": [
+   "Recompensa Obtida"
+  ],
+  "0x19f150": [
+   "Saldo"
+  ],
+  "0x1a4980": [
+   "Total Gasto"
+  ],
+  "0x1a8130": [
+   "Itens Liberados"
+  ],
+  "0x1b9c10": [
+   "O progresso atual ",
+   "será perdido. Tem certeza ",
+   "de que deseja continuar?"
+  ],
+  "0x1ba390": [
+   "Tem certeza?"
+  ]
+ },
+ "_journal_pending": {
+  "j02_01_heros.pck": {
+   "0x38600": [
+    "Heróis ",
+    "da ",
+    "Fronteira"
+   ],
+   "0x5f580": [
+    "Retrato do ",
+    "jovem Red"
+   ],
+   "0x5f630": "Dizem que Red tem um escorpião marcado na mão direita, que ele cobre com um pano vermelho.",
+   "0x66410": [
+    "Casa onde Red cresceu"
+   ],
+   "0x72780": [
+    "DEZENAS ",
+    "CAEM EM ",
+    "BRIGA NO ",
+    "BAR"
+   ],
+   "0x74d00": "Uma briga de arromba aconteceu no saloon no último sábado, deixando até os mineiros mais calejados e os bêbados mais encharcados de queixo caído.",
+   "0x75040": "A ordem foi restaurada pelo nosso Xerife Bartlett, mas não antes de muito sangue ser derramado. Abigail Peppercorn, presidente da Liga da Temperança de Brimstone, pediu outra vez o fechamento do Saloon, arrancando uma boa risada do Governador Griffon.",
+   "0x755d0": "Quando ele pôs os pés na cidade, achei a cara dele familiar. Depois de entender a confusão no Saloon, soube que era o filho de Nate Harlow. Deus sabe que estou bem arranjado aqui, sendo Xerife e tudo mais, mas o garoto merecia saber a verdade, ou pelo menos parte dela. Sentado na minha cadeia, ele não disse nada, então eu falei um bocado. Sinto que as coisas não vão continuar iguais por aqui por muito tempo.",
+   "0x75d70": "O Xerife O'Grady não para de falar de um caçador de recompensas que liquidou sozinho a Gangue de Chris inteira.",
+   "0x7b080": [
+    "Escrito no verso da ",
+    "fotografia: \"Nosso ",
+    "segredo, meu amor.\""
+   ],
+   "0x7f7c0": "A Realeza não gostou muito do Jack.",
+   "0x81ec0": [
+    "Londrino"
+   ],
+   "0x84240": [
+    "Swift ",
+    "Parte"
+   ],
+   "0x85680": "O Sr. Swift, pistoleiro famoso, pode ter dado seu último tiro nestas terras. Segundo nossa fonte em Buckingham, uma das Residentes Reais foi a mais recente e escandalosa conquista do Sr. Swift. Se for verdade, os relatos de sua fuga por Wapping, perseguido pela Guarda Real...",
+   "0x96d50": [
+    "Prezado Sr. Swift:",
+    "Aceite nosso convite para ser",
+    "o atirador de elite do meu",
+    "mundialmente famoso \"Show",
+    "Itinerante do Velho Oeste\".",
+    "O senhor terá o prazer de",
+    "se apresentar para a elite",
+    "e chefes de Estado.",
+    "Atenciosamente,",
+    "Preston O'Leary,",
+    "Mestre de Cerimônias"
+   ],
+   "0x97220": "Um retrato do Jack. Fique de olho nele.",
+   "0x97320": "Com uns tragos na cabeça, ele fala pelos cotovelos. O inglês Jack Swift era conhecido por toda a Europa como atirador de elite e como farrista. Ele me contou que embarcou escondido num navio para o Novo Mundo minutos antes de ser enforcado. Veio parar por aqui atendendo a um antigo convite para entrar no Espetáculo Itinerante do Velho Oeste de Preston O'Leary.",
+   "0x979e0": "Acontece que o pobre O'Leary e seus amigos foram eliminados pelo Professor Perry e seu bando de aberrações assassinas. Jack caiu numa enrascada.",
+   "0xb5510": [
+    "Marca do gado ",
+    "do Rancho ",
+    "Stoakes"
+   ],
+   "0xb55f0": "O melhor rifle do território?",
+   "0xb9fc0": "Se o Battle Royale fosse um concurso de beleza, a Srta. Stoakes venceria sem discussão,",
+   "0xbb580": "mas é um concurso de tiro, sem regalias para damas. Segundo uma fonte do Banco de Brimstone, a Srta. Stoakes está em sérios apuros financeiros. Nosso bom Governador Griffon ofereceu generosamente sua ajuda. A Srta. Stoakes recusou, preferindo, como sempre, fazer as coisas do jeito difícil.",
+   "0xbbb40": [
+    "Annie no rancho"
+   ],
+   "0xbbbd0": "O pai de Annie a criou para ser rancheira, como ele. Depois que o pai morreu, ela tocou o rancho do mesmo jeito. O Governador gostou do Rancho Stoakes e fez o que pôde para \"convencê-la\" a ir embora. Quando os poços foram envenenados e as cercas cortadas, Annie só trabalhou mais duro. Quando Longhorn Luke e Holstein Hal começaram a aparecer, todos souberam que vinha aí uma guerra de tiros."
+  },
+  "j02_02_heros.pck": {
+   "0x460d0": [
+    "OK"
+   ],
+   "0x46130": [
+    "Índice"
+   ],
+   "0x50e80": "Dizem que Shadow Wolf sempre preferiu caçar e explorar sozinho. Quando o Chefe Running Moon o proibiu de visitar seu primo favorito, Red Harlow, ele se afastou ainda mais. Mas a tribo sempre o respeitou pela incrível habilidade na mata e por nunca engolir um insulto, ainda mais vindo da tribo Black Elk.",
+   "0x67870": "Quando se soube que Red estava vivo e preso na mina do General Diego, ninguém questionou a decisão dos anciões de mandar Shadow Wolf ao resgate. Seus últimos feitos expulsaram os Black Elk e acabaram com a profanação de Bear Mountain. Shadow Wolf ficou mais famoso na morte do que jamais foi em vida.",
+   "0x6a200": [
+    "Shadow",
+    "Wolf ",
+    "feito ",
+    "por ",
+    "Falling ",
+    "Star."
+   ],
+   "0x73310": "Não sei muito do homem que se diz \"Buffalo\". Era soldado de uma companhia do Exército dos EUA dizimada pelo General Diego. Sobreviventes como ele foram forçados a trabalhar na mina de Bear Mountain. Só um durão aguentaria.",
+   "0x73730": "Buffalo fugiu da mina e sobreviveu a uma viagem maluca na carroça de suprimentos rumo ao oeste. O único erro dele foi pedir ajuda ao Governador. Griffon quer usar o Battle Royale para calá-lo de vez. Não pude fazer muito além de garantir que ele tivesse uma pistola que atirasse reto."
+  },
+  "j03_01_sidearms.pck": {
+   "0x468c0": [
+    "Pistolas"
+   ],
+   "0x5a490": [
+    "Sair"
+   ],
+   "0x5c720": [
+    "Pistola Velha"
+   ],
+   "0x631c0": "Esta relíquia marcada guarda uma história de vida dura... e de morte.",
+   "0x94b20": [
+    "Revólver"
+   ],
+   "0x94b90": "Um meio de sobreviver por aqui... bom para manter a paz... ou para quebrá-la.",
+   "0xad960": [
+    "Revólveres Gêmeos"
+   ],
+   "0xad9f0": "A maioria não dá conta de dois ao mesmo tempo. Cuidado com quem dá. Dá para começar a atirar na segunda e seguir até sábado à noite. E parece que leva uma semana para recarregar.",
+   "0xb89d0": [
+    "Enviuvadora"
+   ],
+   "0xb8a50": "A \"Enviuvadora\"... o nome já diz tudo, não é?",
+   "0xd96e0": [
+    "analógico     direito: detalhes"
+   ]
+  },
+  "j03_02_sidearms.pck": {
+   "0x2f1d0": [
+    "OK"
+   ],
+   "0x50ec0": "Uma bela arma de vingança justa, ou uma maldição para a gente de bem nas mãos erradas.",
+   "0x526e0": [
+    "O Escorpião"
+   ],
+   "0x6d900": "Nada de luxo, mas mata do mesmo jeito.",
+   "0x86660": [
+    "Seis-Tiros"
+   ],
+   "0x86890": "Há bons armeiros ao sul da fronteira.",
+   "0x869c0": [
+    "Pacificador"
+   ],
+   "0xafd80": "Arabescos finos enfeitam este revólver. Brinquedo caro para oficiais e cavalheiros.",
+   "0xaff50": [
+    "Inquisidor"
+   ],
+   "0xc1430": [
+    "Índice do Capítulo"
+   ],
+   "0xc14c0": [
+    "analógico     direito: detalhes"
+   ]
+  }
+ },
+ "j19_01_battles.pck": {
+  "0x73f40": [
+   "Grandes",
+   "Batalhas"
+  ],
+  "0x82fd0": [
+   "Sair"
+  ],
+  "0x83a50": [
+   "Índice"
+  ],
+  "0xa9bf0": [
+   "História"
+  ],
+  "0xa9c70": [
+   "Maior Combo",
+   "Saldo",
+   "Distância Percorrida",
+   "Distância a Cavalo",
+   "Precisão dos Tiros (%)",
+   "Inimigos Mortos",
+   "Tentativas"
+  ],
+  "0xa9f60": [
+   "Confronto"
+  ],
+  "0xa9fe0": [
+   "Personagem Mais Usado",
+   "Arma Favorita",
+   "Inimigo Mais Odiado",
+   "Jogador Mais Odiado",
+   "Cartas Coletadas",
+   "Vezes que Morreu",
+   "Recompensas Coletadas"
+  ],
+  "0xaa2d0": [
+   "Tempo Congelado",
+   "Maior Série de Mortes"
+  ],
+  "0xc3020": [
+   "Outros Dados"
+  ],
+  "0xc30b0": [
+   "Diário Concluído (%)",
+   "Segredos Achados / Liberados",
+   "Total Gasto",
+   "Distância Total Percorrida",
+   "Dinheiro Coletado",
+   "Total de Tiros Certeiros",
+   "Total de Tiros Disparados"
+  ],
+  "0xc33b0": [
+   "Tiros na Cabeça",
+   "Golpes Especiais Usados",
+   "Modo História Concluído",
+   "Tempo de Jogo"
+  ]
+ }
+}

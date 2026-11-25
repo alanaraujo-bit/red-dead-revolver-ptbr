@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 340" width="1280" height="340" role="img" aria-label="Red Dead Revolver — Tradução PT-BR">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#3a2a1a"/>
+      <stop offset="0.6" stop-color="#1c140c"/>
+      <stop offset="1" stop-color="#0b0805"/>
+    </radialGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2493a"/>
+      <stop offset="1" stop-color="#8e1d14"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9a441" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d9a441"/>
+      <stop offset="1" stop-color="#d9a441" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0 0.5  0 0 0 0.07 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="340" fill="url(#bg)"/>
+  <rect width="1280" height="340" filter="url(#grain)" fill="#000"/>
+  <rect x="18" y="18" width="1244" height="304" fill="none" stroke="#d9a441" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="28" y="28" width="1224" height="284" fill="none" stroke="#d9a441" stroke-opacity="0.18" stroke-width="1"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="640" y="88" fill="#d9a441" font-size="22" letter-spacing="10">★  TRADUÇÃO DE FÃ  ★</text>
+    <text x="640" y="185" fill="#120b06" font-size="86" font-weight="700" letter-spacing="8" transform="translate(4 5)">RED DEAD REVOLVER</text>
+    <text x="640" y="185" fill="url(#red)" font-size="86" font-weight="700" letter-spacing="8">RED DEAD REVOLVER</text>
+    <rect x="290" y="210" width="700" height="2" fill="url(#gold)"/>
+    <text x="640" y="258" fill="#efe6d8" font-size="34" letter-spacing="14">PORTUGUÊS DO BRASIL</text>
+    <text x="640" y="296" fill="#a8998a" font-size="18" letter-spacing="5">PLAYSTATION 2 · TEXTOS · LEGENDAS · TEXTURAS · DUBLAGEM</text>
+  </g>
+</svg>
